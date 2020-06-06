@@ -10,7 +10,7 @@ public class TestService {
 	private final RestTemplate restTemplate;
 
 	public String getData() {
-		return restTemplate.getForObject("http://localhost:8080/test/hello",String.class)
-			   " "+restTemplate.getForObject("http://localhost:8080/test/world", String.class);
+		return restTemplate.getForObject("http://localhost:8080/test/hello", String.class) +
+				" " + restTemplate.getForObject("http://localhost:8080/test/world", String.class);
 	}
 }
