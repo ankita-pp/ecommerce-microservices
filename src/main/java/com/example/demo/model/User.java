@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Id;
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -24,6 +25,7 @@ public class User {
     private String email;
     @Pattern(message = "Please enter valid contact number!", regexp = "(^$|[0-9]{10})")
     private String contactNo;
+    @Valid
     private Address address;
     private UserStatus status;
 }

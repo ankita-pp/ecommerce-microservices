@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.OrderDetails;
 import com.example.demo.model.Order;
+import com.example.demo.service.AuthenticationService;
 import com.example.demo.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +15,11 @@ import static com.example.demo.common.ConstantAttributes.*;
 @RequiredArgsConstructor
 public class OrderController {
     private final OrderService orderService;
+    private final AuthenticationService authenticationService;
 
     @GetMapping(GET_ORDER_FOR_USER)
-    public List<Order> getOrdersByUserId(@PathVariable String userId) {
+    public List<Order> getOrdersByUserId(@RequestHeader boolean isAuthenticated, @PathVariable String userId) {
+        authenticationService.isAuthenticated(isAuthenticated, userId);
         return orderService.getAllOrdersByUserId(userId);
     }
 

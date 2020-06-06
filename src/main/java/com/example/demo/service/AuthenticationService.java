@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RequiredArgsConstructor
-public class ValidationService {
+public class AuthenticationService {
     private final UserRepository userRepository;
 
     public void isAuthenticated(boolean authenticated, String userId) {

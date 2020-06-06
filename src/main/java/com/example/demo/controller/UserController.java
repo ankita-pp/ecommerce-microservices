@@ -3,7 +3,6 @@ package com.example.demo.controller;
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -27,7 +26,6 @@ public class UserController {
     }
 
     @PostMapping(ADD_USER)
-    @Validated
     public String addUser(@RequestBody @Valid User user) {
         return userService.addUser(user);
     }
