@@ -17,24 +17,24 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 @EnableSwagger2WebMvc
 public class SwaggerConfiguration {
 
-	@Bean
-	public Docket api() {
-		return new Docket(DocumentationType.SWAGGER_2)
-				.select()
-				.apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
-				.build()
-				.useDefaultResponseMessages(false)
-				.pathMapping("/")
-				.ignoredParameterTypes(Element.class, Node.class)
-				.apiInfo(apiInfo());
-	}
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
+                .build()
+                .useDefaultResponseMessages(false)
+                .pathMapping("/")
+                .ignoredParameterTypes(Element.class, Node.class)
+                .apiInfo(apiInfo());
+    }
 
-	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("Demo")
-				.description("Demo Project")
-				.contact(new Contact("Ankita Pande",
-						"",
-						"ankita.p.pande@gmail.com"))
-				.build();
-	}
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder().title("Demo")
+                .description("Demo Project")
+                .contact(new Contact("Ankita Pande",
+                        "",
+                        "ankita.p.pande@gmail.com"))
+                .build();
+    }
 }

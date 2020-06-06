@@ -10,19 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping("/test")
 public class TestController {
-	private final TestService testService;
-	@GetMapping("/hello")
-	public String getHello() {
-		return "Hello";
-	}
-	@GetMapping("/world")
-	public String getWorld() {
-		return "World";
-	}
+    private final TestService testService;
 
-	@GetMapping("/rest-template-test")
-	public String getHelloWorld(){
-		return testService.getData();
-	}
+    @GetMapping("/hello")
+    public String getHello() {
+        return "Hello";
+    }
+
+    @GetMapping("/world")
+    public String getWorld() {
+        return "World";
+    }
+
+    @GetMapping("/rest-template-test")
+    public String getHelloWorld() {
+        return testService.getData();
+    }
 
 }

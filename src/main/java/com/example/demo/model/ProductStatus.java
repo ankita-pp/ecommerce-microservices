@@ -1,5 +1,5 @@
 package com.example.demo.model;
 
 public enum ProductStatus {
-	ACTIVE, INACTIVE, NONBROWSE, NOIMAGE
+    ACTIVE, INACTIVE, NONBROWSE, NOIMAGE
 }
