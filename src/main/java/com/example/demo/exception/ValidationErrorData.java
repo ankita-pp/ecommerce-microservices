@@ -24,5 +24,4 @@ public class ValidationErrorData {
         private String fieldName;
         private String message;
     }
-
 }

@@ -18,7 +18,7 @@ public class Address {
     private String city;
     private String state;
     private String country;
-    @NumericString(message = "Please enter valid pin code!")
+    @NumericString(message = "{address.pincode.validation.message}")
     //@Pattern(message = "Please enter valid pin code!", regexp = "(^$|[0-9]{6})")
     private String pinCode;
     private List<String> userContact;

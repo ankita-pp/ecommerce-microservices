@@ -1,9 +1,6 @@
 package com.example.demo.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Id;
 import javax.validation.Valid;
@@ -13,17 +10,18 @@ import javax.validation.constraints.Pattern;
 
 @Data
 @Builder
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
     @Id
     private String id;
-    @NotNull(message = "User must have first name!")
+    @NotNull(message = "{user.firstName.validation.message}")
     private String firstName;
     private String lastName;
-    @Email(message = "Please enter valid email!")
+    @Email(message = "{user.email.validation.message}")
     private String email;
-    @Pattern(message = "Please enter valid contact number!", regexp = "(^$|[0-9]{10})")
+    @Pattern(message = "{user.contactNo.validation.message}", regexp = "(^$|[0-9]{10})")
     private String contactNo;
     @Valid
     private Address address;
